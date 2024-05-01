@@ -74,8 +74,8 @@ body {
   background-color: rgb(233, 233, 233);
 }
 
-.add-btn {
-  background-color: #2955ce;
+.del-btn {
+  background-color: #cc2626;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -89,13 +89,13 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.add-btn:hover {
-  background-color: #193583;
+.del-btn:hover {
+  background-color: #8a1515;
   transition: all 0.3s ease;
   scale: 1.1;
 }
 
-.add-btn:not(:hover) {
+.del-btn:not(:hover) {
   transition: all 0.3s ease;
 }
 
