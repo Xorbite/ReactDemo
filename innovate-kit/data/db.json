@@ -1,0 +1,74 @@
+{
+    "blogs": [
+        {
+            "id": 1,
+            "title": "Lorem Ipsum",
+            "author": "John Doe",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "date": "2022-01-01"
+        },
+        {
+            "id": 2,
+            "title": "Dolor Sit Amet",
+            "author": "Jane Smith",
+            "content": "Dolor sit amet, consectetur adipiscing elit.",
+            "date": "2022-01-02"
+        },
+        {
+            "id": 3,
+            "title": "Consectetur Adipiscing",
+            "author": "David Johnson",
+            "content": "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "date": "2022-01-03"
+        },
+        {
+            "id": 4,
+            "title": "Elit Sed Do",
+            "author": "Emily Williams",
+            "content": "Elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "date": "2022-01-04"
+        },
+        {
+            "id": 5,
+            "title": "Tempor Incididunt",
+            "author": "Michael Brown",
+            "content": "Tempor incididunt ut labore et dolore magna aliqua.",
+            "date": "2022-01-05"
+        },
+        {
+            "id": 6,
+            "title": "Labore Et Dolore",
+            "author": "Jessica Davis",
+            "content": "Labore et dolore magna aliqua. Ut enim ad minim veniam.",
+            "date": "2022-01-06"
+        },
+        {
+            "id": 7,
+            "title": "Magna Aliqua",
+            "author": "Christopher Wilson",
+            "content": "Magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "date": "2022-01-07"
+        },
+        {
+            "id": 8,
+            "title": "Ut Enim Ad Minim",
+            "author": "Olivia Martinez",
+            "content": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "date": "2022-01-08"
+        },
+        {
+            "id": 9,
+            "title": "Quis Nostrud Exercitation",
+            "author": "Daniel Anderson",
+            "content": "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "date": "2022-01-09"
+        },
+        {
+            "id": 10,
+            "title": "Ullamco Laboris Nisi",
+            "author": "Sophia Taylor",
+            "content": "Ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "date": "2022-01-10"
+        }
+    ]
+}
