@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useFetch from "../functions/useFetch";
 
 const BlogDetails = () => {
@@ -10,6 +10,18 @@ const BlogDetails = () => {
     // Here we are destructuring the object that is returned from the useFetch function. We are getting the data, error, and isPending state values from the object that is returned from the useFetch function.
     // We are basically grabbing the data, error, and isPending state values from the object that is returned from the useFetch function. We are then using the data, error, and isPending state values to display the blog post details.
     const { externalData: blog, error, isPending } = useFetch('http://localhost:8000/blogs/' + id);
+    const navigate = useNavigate();
+
+    const handleDelete = () => {
+        // The fetch function takes in the URL of the API and an object with the method of the request. The method of the request is set to DELETE to delete the blog post.
+        fetch('http://localhost:8000/blogs/' + blog.id, {
+            method: 'DELETE'
+        }).then(() => {
+            console.log('Blog deleted');
+            navigate('/');
+        })
+    }
+
 
     return ( 
         // The Blog Details component is used to display the details of a single blog post. The Blog Details component receives the blog id from the URL using the useParams hook.
@@ -25,7 +37,8 @@ const BlogDetails = () => {
                 <article>
                     <h2>{ blog.title }</h2>
                     <p>Written by { blog.author }</p>
-                    <div>{ blog.content }</div>
+                    <div>{blog.content}</div>
+                    <button onClick={handleDelete}>Delete</button>
                 </article>
             )}
         </div>

@@ -77,72 +77,85 @@ body {
   background-color: rgb(233, 233, 233);
 }
 
-.create {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+.blog-details > article button {
+  background-color: #cc2626;
+  border: none;
+  color: white;
+  padding: 15px 32px;
   text-align: center;
-  height: 100vh;
-  margin: auto;
-  max-width: auto;
-  width: 80%;
-  background-color: rgb(233, 233, 233);
-  flex-direction: column;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5rem auto;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.create > form {
+.blog-details > article button:hover {
+  background-color: #8a1515;
+  transition: all 0.3s ease;
+  scale: 1.1;
+}
+
+.blog-details > article button:not(:hover) {
+  transition: all 0.3s ease;
+}
+
+.create {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: auto;
-  background-color: rgb(233, 233, 233);
+  max-width: auto;
   flex-direction: column;
-  margin: 20px;
+  width: 100%;
 }
+
 
 .create > form .form-items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: auto;
-  background-color: rgb(233, 233, 233);
-  flex-direction: row;
+  text-align: left;
+  flex-direction: column;
+  width: 100%;
 }
 
 .create > form .form-items > * {
-  margin: 20px;
+  margin-top: 10px;
   padding: 10px;
   border-radius: 5px;
+  max-width: 400px;
+  width: 100%;
 }
 
-.create > form .form-items > input {
+.create > form .form-items > input , select, textarea{
   border: 2px solid #2955ce;
   width: 400px;
+  resize: none;
+  padding: 8px; 
+  max-width: 400px;
 }
 
-.create > form .form-items > select {
-  border: 2px solid #2955ce;
-  width: 400px;
-
+.create > form .form-items > textarea{
+  height: 150px;
+  overflow: auto;
 }
 
-.create > form .form-items > textarea {
-  border: 2px solid #2955ce;
-  width: 400px;
+.create > form .form-items > label{
+  padding-left: 0;
+  width: 100%;
 }
 
 .create > form button {
   color: #2955ce;
   width: 200px;
   padding: 10px;
-  margin: 20px;
+  margin: 30px auto;
   border-radius: 10px;
   border: 2px solid #2955ce;
+  align-self: center;
+  cursor: pointer;
 }
 
 .create > form button:hover {
@@ -155,6 +168,18 @@ body {
 
 .create > form button:not(:hover) {
   transition: all 0.3s ease;
+}
+
+.create > form p {
+  width: 400px;
+  margin: auto;
+  text-align: center;
+}
+
+.create > form h1 h2 h3 h4 h5 {
+  width: 400px;
+  margin: auto;
+  text-align: center;
 }
 
 

@@ -29,13 +29,12 @@ const useFetch = (url) => {
     // The empty array of dependencies means that the useEffect hook does not depend on any values. The useEffect hook will only run once when the component renders.
     useEffect(() => {
 
-        const abortController = new AbortController();
 
         // The setTimeout function is to simulate a real-world scenario where the data is being fetched from a server using an API. 
         setTimeout(() => { 
             // The signal property is used to pass in the abortController.signal to the fetch function. The abortController.signal is used to abort the fetch request if the component unmounts. 
             // When a page is switched, the fetch request is aborted.
-            fetch(url, { signal: abortController.signal })
+            fetch(url)
                 // The res parameter is the response from the API. We can use the res parameter to get the data from the API.
                 .then(res => {
                     if (!res.ok) {
@@ -65,7 +64,7 @@ const useFetch = (url) => {
 
         // The return statement is used to clean up the useEffect hook. The return statement is a function that is called when the component unmounts. 
         // For example when the component is removed from the DOM. Like switching to another page.
-        return () => abortController.abort();
+       
 
 
 

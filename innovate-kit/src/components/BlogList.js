@@ -28,7 +28,7 @@ const BlogList = ({blogs, title, handleDelete }) => {
                             <p>Written by {blog.author}</p>
                         </Link>
                         {/* We are firing an anonymous function here to execute the handleDelete function */}
-                        <button className='del-btn' onClick={() => handleDelete(blog.id)}>Delete</button>
+                        {/* <button className='del-btn' onClick={() => handleDelete(blog.id)}>Delete</button> */}
                     </div>
                 </div>
             ))}
