@@ -29,6 +29,8 @@ const useFetch = (url) => {
     // The empty array of dependencies means that the useEffect hook does not depend on any values. The useEffect hook will only run once when the component renders.
     useEffect(() => {
 
+        // The isCancelled variable is a boolean value that is used to check if the fetch request has been cancelled. The isCancelled variable is set to false when the fetch request is not cancelled. The isCancelled variable is set to true when the fetch request is cancelled.
+        let isCancelled = false;
 
         // The setTimeout function is to simulate a real-world scenario where the data is being fetched from a server using an API. 
         setTimeout(() => { 
@@ -48,24 +50,27 @@ const useFetch = (url) => {
             // If the data is fetched successfully, we can use the data to update the state value of the blogs array. And update the error state value to null. 
             // Otherwise, we update the error state value to show the error message.
                 .then(data => {
-                    setData(data);
-                    setIsPending(false);
-                    setError(null);
+
+                    // We are checking if the fetch request has been cancelled. If the fetch request has been cancelled, we do not update the state value of the blogs array. 
+                    // Otherwise we update the state value of the blogs array.
+                    if (!isCancelled) { 
+                        setData(data);
+                        // alert("The posts are being fetched from the API");
+                        setIsPending(false);
+                        setError(null);
+                    }
                 })
                 .catch(err => {
-                    if (err.name === 'AbortError') {
-                        console.log('Fetch has been aborted');
-                    } else {
-                        setIsPending(false);
-                        setError(err.message);
-                    }
+                    setIsPending(false);
+                    setError(err.message);
                 });
         }, 1000);
 
-        // The return statement is used to clean up the useEffect hook. The return statement is a function that is called when the component unmounts. 
+        // The return statement is used to clean up the useEffect hook. The return statement is a function that is called when the component unmounts.
         // For example when the component is removed from the DOM. Like switching to another page.
-       
-
+        return () => { 
+            isCancelled = true;
+        } 
 
 
         // Once this promise is resolved, we can use the data that we get from the API. We can use the data to update the state value of the blogs array.
