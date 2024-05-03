@@ -20,6 +20,9 @@ body {
   z-index: 1000;
 }
 
+.navbar div a {
+  text-decoration: none;
+}
 
 .navbar li {
   list-style: none;
@@ -60,6 +63,17 @@ body {
   margin: auto;
   max-width: auto;
   width: 80%;
+  background-color: rgb(233, 233, 233);
+}
+
+.blog-details {
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+  height: 100vh;
+  margin: auto;
+  max-width: auto;
+  width: 60%;
   background-color: rgb(233, 233, 233);
 }
 
@@ -115,6 +129,15 @@ body {
   align-items: center;
 }
 
+.blog-card:hover {
+  scale: 1.1;
+  transition: all 0.3s ease;
+}
+
+.blog-card:not(:hover){
+  transition: all 0.3s ease;
+}
+
 .blog-card {
   background-color: white;
   border-radius: 10px;
@@ -125,4 +148,18 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.blog-card a {
+  text-decoration: none;
+  color: black;
+}
+
+.blog-card a:hover {
+  color: #2955ce;
+  transition: all 0.3s ease;
+}
+
+.blog-card a:not(:hover){
+  transition: all 0.3s ease;
 }

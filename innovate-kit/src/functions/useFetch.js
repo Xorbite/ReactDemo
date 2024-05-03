@@ -55,7 +55,7 @@ const useFetch = (url) => {
                 })
                 .catch(err => {
                     if (err.name === 'AbortError') {
-                        console.log('fetch aborted');
+                        console.log('Fetch has been aborted');
                     } else {
                         setIsPending(false);
                         setError(err.message);
@@ -64,7 +64,7 @@ const useFetch = (url) => {
         }, 1000);
 
         // The return statement is used to clean up the useEffect hook. The return statement is a function that is called when the component unmounts. 
-        // For example when the component is removed from the DOM.Like switching to another page.
+        // For example when the component is removed from the DOM. Like switching to another page.
         return () => abortController.abort();
 
 

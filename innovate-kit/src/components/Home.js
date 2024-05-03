@@ -23,8 +23,9 @@ const Home = () => {
     return ( 
         <div className="home">
             <h1>Welcome to Innovate Kit</h1>
+            {/* We are injecting jsx code with the curly braces and by using the && operator is we are conditionally rendering the respective messages */}
             
-            
+            {/* The isPending state value is used to display a loading message while the data is being fetched from the API. The loading message is displayed if the isPending state value is true. */}
             { isPending && <div>Loading...</div>}
             {/* The error message is displayed if there is an error in fetching the data from the API. The error message is displayed if the error state value is not null. */}
             { error && <div>{ error }</div> }
@@ -32,6 +33,7 @@ const Home = () => {
             {/* We can pass in a title with "title='All Blogs'" by just adding this behind "{blogs}"*/}
             {/* The "blogs=" property can be called whatever, the value is a dynamic value which is the actual blogs prop from the useState function */}
             {/* Conditional templating in React. The logical and evaluates the left first, if it is false it never bothers with the rights and therefore it doesn't output anything */}
+            {/* We are passing the blogs, title, and handleDelete function as props to the BlogList component. We are then using the props in the BlogList component to display the blog posts. */}
             { blogs && <BlogList blogs={blogs}/>}
             {/* We can reuse the prop like below */}
             {/* <BlogList blogs={blogs.filter((blog)=> blog.author === 'Yaz')} title="Test"/>  */}

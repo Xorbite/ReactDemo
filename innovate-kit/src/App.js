@@ -2,7 +2,8 @@ import logo from './logo.svg';
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Create from './components/Create'
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import BlogDetails from './components/BlogDetails';
 
 function App() {
 
@@ -26,6 +27,9 @@ function App() {
             } />
             <Route path="/create" element= {
               <Create />
+            } />
+            <Route path="/blogs/:id" element= {
+              <BlogDetails />
             } />
             </Routes>
           </div>

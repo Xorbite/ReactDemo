@@ -1,5 +1,8 @@
+import { Link } from 'react-router-dom';
+
 // We receive the passed in data using "props" parameter from the parent component and then we can use it in the child component. We can then use the data to display the blog posts in the BlogList component.
-// The "props" parameter is an object that contains all the properties passed to the component. If we want to pass specific data to be received, we can specfy which data we want to access by using the names instead of the whole "props" object itself.
+// The "props" parameter is an object that contains all the properties passed to the component. If we want to pass specific data to be received, 
+// we can specfy which data we want to access by using the names instead of the whole "props" object itself like in the case for blogs, title, handleDelete.
 
 const BlogList = ({blogs, title, handleDelete }) => {
 
@@ -18,8 +21,12 @@ const BlogList = ({blogs, title, handleDelete }) => {
                 // The key value should be unique for each item in the array. The key value is used by React to keep track of the items in the array and to update the items in the array efficiently.
                 <div className="blogs-items">
                     <div className="blog-card" key={blog.id}>
-                        <h2>{ blog.title }</h2>
-                        <p>Written by {blog.author}</p>
+                        {/* // Here we are using the Link component from the react-router-dom library to link to the BlogDetails component. 
+                        The Link component is used to create a link to different pages in the application using the correspondent blog ids. */}
+                        <Link to={`/blogs/${blog.id}`}>
+                            <h2>{ blog.title }</h2>
+                            <p>Written by {blog.author}</p>
+                        </Link>
                         {/* We are firing an anonymous function here to execute the handleDelete function */}
                         <button className='del-btn' onClick={() => handleDelete(blog.id)}>Delete</button>
                     </div>
