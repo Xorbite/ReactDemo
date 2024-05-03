@@ -28,6 +28,9 @@ const useFetch = (url) => {
     // The useEffect hook takes in a second argument which is an array of dependencies. The array of dependencies is an array of values that the useEffect hook depends on.
     // The empty array of dependencies means that the useEffect hook does not depend on any values. The useEffect hook will only run once when the component renders.
     useEffect(() => {
+        
+        const controller = new AbortController();
+        const signal = controller.signal;
 
         // The isCancelled variable is a boolean value that is used to check if the fetch request has been cancelled. The isCancelled variable is set to false when the fetch request is not cancelled. The isCancelled variable is set to true when the fetch request is cancelled.
         let isCancelled = false;
@@ -36,7 +39,7 @@ const useFetch = (url) => {
         setTimeout(() => { 
             // The signal property is used to pass in the abortController.signal to the fetch function. The abortController.signal is used to abort the fetch request if the component unmounts. 
             // When a page is switched, the fetch request is aborted.
-            fetch(url)
+            fetch(url, { signal: signal })
                 // The res parameter is the response from the API. We can use the res parameter to get the data from the API.
                 .then(res => {
                     if (!res.ok) {
@@ -53,27 +56,31 @@ const useFetch = (url) => {
 
                     // We are checking if the fetch request has been cancelled. If the fetch request has been cancelled, we do not update the state value of the blogs array. 
                     // Otherwise we update the state value of the blogs array.
-                    if (!isCancelled) { 
+                    // if (!isCancelled) { 
                         setData(data);
                         // alert("The posts are being fetched from the API");
                         setIsPending(false);
                         setError(null);
-                    }
+                    // }
                 })
                 .catch(err => {
+                    if (err.name === 'AbortError') {
+                        console.log('Fetch aborted');
+                    }
                     setIsPending(false);
-                    setError(err.message);
+                    // setError(err.message);
                 });
         }, 1000);
 
         // The return statement is used to clean up the useEffect hook. The return statement is a function that is called when the component unmounts.
         // For example when the component is removed from the DOM. Like switching to another page.
         return () => { 
-            isCancelled = true;
+            controller.abort();
+            // isCancelled = true;
         } 
 
 
-        // Once this promise is resolved, we can use the data that we get from the API. We can use the data to update the state value of the blogs array.
+    // This dependency array is used to tell React to run the useEffect hook when the url changes. The useEffect hook will run when the url changes.
     }, [url]);
 
     // Here we are encapsulating the externalData, isPending, and error state values in an object. We are then returning the object from the useFetch function.
