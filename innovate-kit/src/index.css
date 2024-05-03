@@ -77,6 +77,87 @@ body {
   background-color: rgb(233, 233, 233);
 }
 
+.create {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  margin: auto;
+  max-width: auto;
+  width: 80%;
+  background-color: rgb(233, 233, 233);
+  flex-direction: column;
+}
+
+.create > form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  background-color: rgb(233, 233, 233);
+  flex-direction: column;
+  margin: 20px;
+}
+
+.create > form .form-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  background-color: rgb(233, 233, 233);
+  flex-direction: row;
+}
+
+.create > form .form-items > * {
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.create > form .form-items > input {
+  border: 2px solid #2955ce;
+  width: 400px;
+}
+
+.create > form .form-items > select {
+  border: 2px solid #2955ce;
+  width: 400px;
+
+}
+
+.create > form .form-items > textarea {
+  border: 2px solid #2955ce;
+  width: 400px;
+}
+
+.create > form button {
+  color: #2955ce;
+  width: 200px;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  border: 2px solid #2955ce;
+}
+
+.create > form button:hover {
+  color: White;
+  transition: all 0.3s ease;
+  background-color: #2955ce;
+  scale: 1.1;
+  font-weight: bold;
+}
+
+.create > form button:not(:hover) {
+  transition: all 0.3s ease;
+}
+
+
 .content {
   display: flex;
   justify-content: center;
